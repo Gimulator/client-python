@@ -3,7 +3,7 @@
 import grpc
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-import proto_pb2 as proto__pb2
+import gimulator_py.proto_pb2 as proto__pb2
 
 
 class MessageAPIStub(object):
