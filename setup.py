@@ -12,7 +12,7 @@ URL = 'https://github.com/Gimulator/client-python'
 EMAIL = 'info@roboepics.com'
 AUTHOR = 'RoboEpics Authors'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.1.1'
+VERSION = '0.1.2'
 
 REQUIRED = [
     "grpcio",
