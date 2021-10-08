@@ -88,8 +88,8 @@ class GimulatorClient:
 class DirectorClient(GimulatorClient):
     director_api = None
 
-    def __init__(self, wait_until_connected=True):
-        super().__init__(wait_until_connected)
+    def __init__(self, wait_until_connected=True, **kwargs):
+        super().__init__(wait_until_connected, **kwargs)
         self.director_api = DirectorAPIStub(self.channel)
 
     def WaitUntilReady(self):
@@ -127,8 +127,8 @@ class DirectorClient(GimulatorClient):
 class OperatorClient(GimulatorClient):
     operator_api = None
 
-    def __init__(self, wait_until_connected=True):
-        super().__init__(wait_until_connected)
+    def __init__(self, wait_until_connected=True, **kwargs):
+        super().__init__(wait_until_connected, **kwargs)
         self.operator_api = OperatorAPIStub(self.channel)
 
     def SetUserStatus(self, report: Report):
