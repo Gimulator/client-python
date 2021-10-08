@@ -3,8 +3,8 @@ import logging
 from socket import getaddrinfo, gaierror
 from time import sleep
 
-from proto_pb2_grpc import *
-from proto_pb2 import *
+from gimulator_py.proto_pb2_grpc import *
+from gimulator_py.proto_pb2 import *
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 logger = logging.getLogger('Gimulator Client')
