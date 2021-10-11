@@ -3,8 +3,8 @@ import logging
 from socket import getaddrinfo, gaierror
 from time import sleep
 
-from gimulator_py.proto_pb2_grpc import *
-from gimulator_py.proto_pb2 import *
+from gimulator.proto_pb2_grpc import *
+from gimulator.proto_pb2 import *
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 logger = logging.getLogger('Gimulator Client')
@@ -28,10 +28,10 @@ def check_dns(domain, port):
 def wait_for_dns(domain, port):
     while True:
         try:
-            logger.warning("Waiting for Gimulator server to run on domain %s and port %d..." % (domain, port))
             getaddrinfo(domain, port)
             break
         except gaierror:
+            logger.warning("Failed to resolve DNS for Gimulator.\n%s and port %d...\nRetrying ..." % (domain, port))
             sleep(1)
 
 
