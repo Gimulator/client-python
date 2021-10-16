@@ -56,7 +56,7 @@ class GimulatorClient:
         if wait_until_connected:
             wait_for_dns(self.domain, self.port)  # FIXME this is irritating! Someone please fix this...
 
-        self.channel = grpc.insecure_channel(host)
+        self.channel = grpc.insecure_channel(host, options=(('grpc.enable_http_proxy', 0),))
         self.api = MessageAPIStub(self.channel)
         logger.info("Client connected!")
 
