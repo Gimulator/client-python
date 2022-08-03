@@ -1,4 +1,5 @@
-from os import environ, exit
+from os import environ
+from sys import exit
 import logging
 from socket import getaddrinfo, gaierror
 from time import sleep
@@ -40,7 +41,7 @@ def back_off(n_times, func):
     while True:
         i += 1
         if i > n_times:
-            logger.warning("Cannot resolve Gimulator host! Retrying...")
+            logger.warning("Cannot resolve Gimulator host! Exitting...")
             exit(1)
         
         try:
